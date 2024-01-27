@@ -36,9 +36,12 @@ git clong https://github.com/PyGpPhs-Source/PyGpPhs.git
 ```
 
 3, The repository should be seen at your desired directory. User can refer to the "example.py" 
-for more information on how to use the package.
+for more information on how to use the package. The main.py file, or any file as the driver
+to the simulation, can be located either inside PyGpPhs folder or outside. "example.py" shows an demonstration
+of running the driver file outside the toolbox directory. Inside the PyGpPhs folder,
+user can see "main.py" as an example of running the driver file.
 
-
+## Magnet Oscillator explaination:
 **Example.py explaination:**
 The example simulation serves as a reference and instructor to use PyGpPhs toolbox. The example, or case-study,
 is a nonlinear magnet oscillator system shown below:
@@ -69,7 +72,7 @@ Install GPyTorch using pip or conda:
 pip install pygpphs
 conda install pygpphs -c pygpphs
 ```
-More information on installation can be viewed at: 
+More information on installation can be viewed at: @paper link...
 
 ## Reference:
 
