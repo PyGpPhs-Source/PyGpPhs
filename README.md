@@ -51,10 +51,7 @@ The parameters to the port-Hamiltonian system is given to be:
 
 $H(x) = \frac{x_1^2}{2}+2\cos(x_0)+\frac{x_2^2}{2}-1$
 
-$G(x)=\begin{bmatrix}
-        0\\
-        1
-    \end{bmatrix}$
+$G(x)=[0, 1]^T$
 
 $u(t)=0.1\sin(t)$
 
