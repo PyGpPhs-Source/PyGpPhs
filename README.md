@@ -45,8 +45,10 @@ is a nonlinear magnet oscillator system shown below:
 ![Alt Text](./magnet_oscillator.png)
 The parameters to the port-Hamiltonian system is given to be:
 
-$$
-H(x) &= \frac{x_1^2}{2}+2\cos(x_0)+\frac{x_2^2}{2}-1\\
+\begin{equation}
+\begin{split}
+\label{eq:test_system}
+    H(x) &= \frac{x_1^2}{2}+2\cos(x_0)+\frac{x_2^2}{2}-1\\
     G(x)&=\begin{bmatrix}
         0\\
         1
@@ -56,7 +58,9 @@ H(x) &= \frac{x_1^2}{2}+2\cos(x_0)+\frac{x_2^2}{2}-1\\
         0&1\\
         -1&-R
     \end{bmatrix}, \text{ where }R=0.1.
-$$
+\end{split}
+\end{equation}
+
 
 
 
