@@ -44,6 +44,7 @@ The example simulation serves as a reference and instructor to use PyGpPhs toolb
 is a nonlinear magnet oscillator system shown below:
 ![Alt Text](./magnet_oscillator.png)
 The parameters to the port-Hamiltonian system is given to be:
+$H(x) = \frac{x_1^2}{2}+2\cos(x_0)+\frac{x_2^2}{2}-1$
 
 \begin{equation}
 \begin{split}
