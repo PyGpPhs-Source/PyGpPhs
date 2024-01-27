@@ -1,10 +1,10 @@
 class Hyp:
 
-    def __init__(self):
-        self.sn_ = [1, True]
-        self.sd_ = [1, True]
-        self.l_ = [[1, 1], [True, True]]
-        self.JR_vec_ = [[0, 1, -1], [False, False, True]]
+    def __init__(self, sn=[1, True], sd=[1, True], l=[[1, 1], [True, True]], JR=[[0, 1, -1], [False, False, True]]):
+        self.sn_ = sn
+        self.sd_ = sd
+        self.l_ = l
+        self.JR_vec_ = JR
 
     def get_SN(self):
         return self.sn_

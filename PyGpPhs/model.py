@@ -1,12 +1,12 @@
 import gpytorch
 import numpy as np
 from scipy.integrate import odeint
-from hyp import Hyp
-from Cholesky import *
-from opt_hyp import opt_hyp
-from PHSkernel_se_New import *
+from PyGpPhs.hyp import Hyp
+from PyGpPhs.Cholesky import *
+from PyGpPhs.opt_hyp import opt_hyp
+from PyGpPhs.PHSkernel_se_New import *
 import torch
-from GPdX import GP_Model_dX
+from PyGpPhs.GPdX import GP_Model_dX
 
 
 class Model:

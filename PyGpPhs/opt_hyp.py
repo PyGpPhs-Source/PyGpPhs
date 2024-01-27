@@ -1,7 +1,7 @@
 from scipy.optimize import minimize
-from PHSkernel_se_New import *
-from hyp import Hyp
-from Cholesky import *
+from PyGpPhs.PHSkernel_se_New import *
+from PyGpPhs.hyp import Hyp
+from PyGpPhs.Cholesky import *
 import torch
 
 

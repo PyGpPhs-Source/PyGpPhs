@@ -23,9 +23,17 @@ calls.
 - scipy>=1.4.0 
 - gpytorch>=1.5.0
 
+**Installation Instruction**:
+The heart of PyGpPhs is located in the foler "PyGpPhs". It is essential to 
+clone the folder repository locally in order to utilize the functionality of the 
+model.
+
 Install GPyTorch using pip or conda:
 ```bash
 pip install pygpphs
 conda install pygpphs -c pygpphs
 ```
 More information on installation can be viewed at: 
+
+## Reference:
+
