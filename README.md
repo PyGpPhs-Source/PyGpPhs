@@ -55,10 +55,13 @@ $G(x)=[0, 1]^T$
 
 $u(t)=0.1\sin(t)$
 
-$J-R=\begin{bmatrix}
+```math
+J-R=\begin{bmatrix}
         0&1\\\
         -1&-R
-    \end{bmatrix}, \text{ where }R=0.1.$
+    \end{bmatrix}, \text{ where }R=0.1.
+```
+
 
 
 
