@@ -72,12 +72,11 @@ J-R=\begin{bmatrix}
 
 
 
-Install GPyTorch using pip or conda:
+Install latest version GPyTorch:
 ```bash
-pip install pygpphs
-conda install pygpphs -c pygpphs
+pip install https://github.com/PyGpPhs-Source/PyGpPhs.git
 ```
 More information on installation can be viewed at: @paper link...
 
 ## Reference:
-
+Will be updated later
