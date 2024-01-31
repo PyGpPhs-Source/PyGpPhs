@@ -24,7 +24,7 @@ calls.
 - gpytorch>=1.5.0
 
 **Installation Instruction**:
-The heart of PyGpPhs is located in the foler "PyGpPhs". It is essential to 
+The heart of PyGpPhs is located in the folder "PyGpPhs". It is essential to 
 clone the folder repository locally in order to utilize the functionality of the 
 model.
 
@@ -40,6 +40,30 @@ for more information on how to use the package. The main.py file, or any file as
 to the simulation, can be located either inside PyGpPhs folder or outside. "example.py" shows an demonstration
 of running the driver file outside the toolbox directory. Inside the PyGpPhs folder,
 user can see "main.py" as an example of running the driver file.
+
+**Important dependency:**
+This package relies on the following packages in python:
+- [gpytorch](https://github.com/cornellius-gp/gpytorch/tree/master) (Gaussian Process regression to take gradients on)
+- scipy.integrate (integration of state variable)
+- numpy (generic mathematical programming)
+- ctypes (handling communication and results between python and C\C++)
+- glob (reading .so files, compiled from C\C++, from python)
+
+Important libraries from C++ is:
+- [Eigen Dense](https://eigen.tuxfamily.org/index.php?title=Main_Page) (For fast matrix computations)
+- stl vector class which should be already included.
+
+Please note that in order to successfully use the toolbox, the user must make sure the following criteria:
+- GCC compiler is installed
+
+For Mac machines, everything should run. For non-Mac machines, it is sometimes necessary to recompile the .c and .cpp files used.
+To do that:
+1. Navigate to the PyGpPhs folder
+2. Click, for instance, Cholesky_decomp.c file
+3. follow the comment instruction at the top by typing into terminal
+4. Select PHSkernel_se_CPP.cpp
+5. follow the comment instruction by typing into terminal
+
 
 ## Magnet Oscillator explaination:
 **Example.py explaination:**
