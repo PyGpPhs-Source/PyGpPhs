@@ -53,7 +53,7 @@ Important libraries from C++ is:
 - [Eigen Dense](https://eigen.tuxfamily.org/index.php?title=Main_Page) (For fast matrix computations)
 - stl vector class which should be already included.
 
-Please note that in order to successfully use the toolbox, the user must make sure the following criteria:
+**Please note that in order to successfully use the toolbox, the user must make sure the following criteria:**
 - GCC compiler is installed
 
 For Mac machines, everything should run. For non-Mac machines, it is sometimes necessary to recompile the .c and .cpp files used.
