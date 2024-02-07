@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
-from PyGpPhs.model import *
-from PyGpPhs.PHSkernel_se_New import *
+from PyGpPhs_py.model import *
+from PyGpPhs_py.PHSkernel_se_New import *
 from scipy.integrate import odeint
 
 
@@ -145,7 +145,7 @@ def main():
     plt.figure()
     plt.subplot(2, 1, 1)
     plt.plot(np.arange(0, Result_num_data, 0.1), dX[0, :], color='red', label='Ground Truth dX', linewidth=1)
-    plt.plot(np.arange(0, Result_num_data, 0.1), model.get_dX()[0, :], color='blue', label='PyGpPhs computed dX',
+    plt.plot(np.arange(0, Result_num_data, 0.1), model.get_dX()[0, :], color='blue', label='PyGpPhs_py computed dX',
              linewidth=1)
     plt.xlabel('Time (s)')
     plt.ylabel('Velocity (m/s)')
@@ -153,7 +153,7 @@ def main():
 
     plt.subplot(2, 1, 2)
     plt.plot(np.arange(0, Result_num_data, 0.1), dX[1, :], color='red', label='Ground Truth dX', linewidth=1)
-    plt.plot(np.arange(0, Result_num_data, 0.1), model.get_dX()[1, :], color='blue', label='PyGpPhs computed dX',
+    plt.plot(np.arange(0, Result_num_data, 0.1), model.get_dX()[1, :], color='blue', label='PyGpPhs_py computed dX',
              linewidth=1)
     plt.xlabel('Time (s)')
     plt.ylabel('Force (N)')
@@ -178,7 +178,7 @@ def main():
     surf1 = ax.plot_surface(X_test, Y_test, np.reshape(H_true, n_test), rstride=2, cstride=2, color='blue', linewidth=1,
                             label='True Hamiltonian', alpha=1)
     surf2 = ax.plot_surface(X_test, Y_test, np.reshape(pred, n_test), color='gold', linewidth=1,
-                            label='PyGpPhs Hamiltonian', alpha=1)
+                            label='PyGpPhs_py Hamiltonian', alpha=1)
     ax.scatter3D(X[0, :], X[1, :], np.zeros(n_data), color='red', marker='o')
     surf1._edgecolors2d = surf1._edgecolor3d
     surf1._facecolors2d = surf1._facecolor3d
@@ -203,14 +203,14 @@ def main():
 
     plt.subplot(2, 1, 1)
     plt.plot(t_span, x_org[:, 0], color='red', label='Ground Truth', linewidth=1)
-    plt.plot(t_span, x_gp[:, 0], color='blue', label='PyGpPhs', linewidth=1)
+    plt.plot(t_span, x_gp[:, 0], color='blue', label='PyGpPhs_py', linewidth=1)
     plt.xlabel('Time (s)')
     plt.ylabel('Position (m)')
     plt.legend()
 
     plt.subplot(2, 1, 2)
     plt.plot(t_span, x_org[:, 1], color='red', label='Ground Truth', linewidth=1)
-    plt.plot(t_span, x_gp[:, 1], color='blue', label='PyGpPhs', linewidth=1)
+    plt.plot(t_span, x_gp[:, 1], color='blue', label='PyGpPhs_py', linewidth=1)
     plt.xlabel('Time (s)')
     plt.ylabel('Momentum (Kg m/s)')
     plt.legend()

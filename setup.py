@@ -2,7 +2,7 @@ from setuptools import setup, Extension, find_packages
 
 # Compile *mysum.cpp* into a shared library
 setup(
-    name='PyGpPhs',
+    name='PyGpPhs_py',
     version='0.1',
     packages=find_packages(),
     install_requires=[
