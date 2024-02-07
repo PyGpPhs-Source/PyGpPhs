@@ -8,12 +8,19 @@
 import ctypes
 import numpy as np
 import glob
+import platform
 
 
 def PHS_kernel_new(A, B, hyp_sd, hyp_l, d1, JR=None):
     # Load the shared library
-    libfile = glob.glob('PyGpPhs/builds/*/./Command_center.cpython-39-darwin.so')[0]
-    mylib = ctypes.CDLL(libfile)
+    if platform.system() == 'Darwin':
+        libfile = glob.glob('../Extensions/exec/PHSkernel_build_mac/*/./Command_center.cpython-39-darwin.so')[0]
+        mylib = ctypes.CDLL(libfile)
+    else:
+        libfile = ctypes.CDLL("../Extensions/exec/PHSkernel_build_windows/PHSkernel_se_CPP.dll")
+    if not libfile:
+        print("No matching files found.")
+
     # Define the argument types for the C function
     mylib.Command_center.argtypes = (
         ctypes.POINTER(ctypes.c_double),  # X

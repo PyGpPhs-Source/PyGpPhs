@@ -1,7 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
-
-from Cholesky import *
 from model import *
 from PHSkernel_se_New import *
 from scipy.integrate import odeint

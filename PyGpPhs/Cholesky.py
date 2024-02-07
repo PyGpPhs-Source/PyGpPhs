@@ -1,9 +1,15 @@
 import ctypes
 import numpy as np
+import platform
 
 
 def Cholesky_decomp(A):
-    mylib = ctypes.CDLL("./PyGpPhs/Cholesky_decomp.so")
+    
+    # check if windows
+    if platform.system() == 'Windows':
+        mylib = ctypes.CDLL("../Extensions/exec/Cholesky_decomp.dll")
+    else:
+        mylib = ctypes.CDLL("../Extensions/exec/Cholesky_decomp.so")
 
     # Define the argument types for the C function
     mylib.Cholesky_Decomposition.argtypes = (
