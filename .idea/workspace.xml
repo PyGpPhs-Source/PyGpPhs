@@ -3,6 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b9113277-d31b-4f6e-a7c6-4946eb807d90" name="Changes" comment="added extensions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGpPhs/Cholesky.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGpPhs_py/Cholesky.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGpPhs/GPdX.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGpPhs_py/GPdX.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGpPhs/PHSkernel_se_New.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGpPhs_py/PHSkernel_se_New.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGpPhs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGpPhs_py/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGpPhs/hyp.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGpPhs_py/hyp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGpPhs/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGpPhs_py/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGpPhs/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGpPhs_py/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGpPhs/opt_hyp.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGpPhs_py/opt_hyp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGpPhs/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGpPhs_py/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/example.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exec/Cholesky_decomp.dll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/exec/Cholesky_decomp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/exec/Cholesky_decomp.so" beforeDir="false" />
@@ -11,6 +21,7 @@
       <change beforePath="$PROJECT_DIR$/exec/PHSkernel_build_winsows/PHSkernel_se_CPP.dll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/exec/PHSkernel_build_winsows/lib.win-amd64-cpython-310/Command_center.cp310-win_amd64.pyd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/exec/PHSkernel_build_winsows/temp.win-amd64-cpython-310/Release/PHSkernel_se_CPP.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cholesky_decomp.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PHSkernel_se_CPP.cpp" beforeDir="false" />
     </list>
