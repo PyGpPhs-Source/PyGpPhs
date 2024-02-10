@@ -56,13 +56,22 @@ Important libraries from C++ is:
 **Please note that in order to successfully use the toolbox, the user must make sure the following criteria:**
 - GCC compiler is installed
 
-For Mac machines, everything should run. For non-Mac machines, it is sometimes necessary to recompile the .c and .cpp files used.
+**Compilation and run:**
+
+Please note that this toolbox is successfully tested on MacOS system with Apple Silicon chip. 
+For Mac machines, the toolbox should be able to run successfully. For non-Mac machines, it is necessary to recompile the .c and .cpp files used.
 To do that:
 1. Navigate to the PyGpPhs folder
 2. Click, for instance, Cholesky_decomp.c file
 3. follow the comment instruction at the top by typing into terminal
 4. Select PHSkernel_se_CPP.cpp
 5. follow the comment instruction by typing into terminal
+
+The toolbox developer will provide the compiled version of c++ and c files to this repo, as well as 
+connect those files to python. The changes are all updated in the "update_branch".
+
+**update_branch is unstable:** bear in mind that the **main** branch is the stable version of the toolbox. After
+robustly testing the **update_branch**, we will migrate the update_branch over to the main branch.
 
 
 ## Magnet Oscillator explaination:
