@@ -105,7 +105,7 @@ J-R=\begin{bmatrix}
 
 
 
-Install latest version GPyTorch:
+Install latest version PyGpPhs:
 ```bash
 pip install https://github.com/PyGpPhs-Source/PyGpPhs.git
 ```
