@@ -36,7 +36,7 @@ def PHS_kernel_new(A, B, hyp_sd, hyp_l, d1, JR=None):
         # Define the return type
         Command_center.restype = None
     else:
-        libfile = ctypes.CDLL("PyGpPhs/Extensions/exec/kernel_64bit.dll")
+        libfile = "PyGpPhs/Extensions/exec/kernel_64bit.dll"
         mylib = ctypes.cdll.LoadLibrary(libfile)
         command_center_proto = ctypes.WINFUNCTYPE(
             ctypes.c_void_p,  # this is the return type!
