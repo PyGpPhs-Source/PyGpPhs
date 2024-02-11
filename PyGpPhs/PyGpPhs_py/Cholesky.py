@@ -15,7 +15,7 @@ def Cholesky_decomp(A):
         mylib.Cholesky_Decomposition.restypes = None
         cholesky = mylib.Cholesky_Decomposition
     else:
-        libfile = "../Extension/exec/Cholesky_decomp_64bit.dll"
+        libfile = "PyGpPhs/Extensions/exec/Cholesky_decomp_64bit.dll"
         mylib = ctypes.cdll.LoadLibrary(libfile)
         Cholesky_decomp_proto = ctypes.WINFUNCTYPE(
             ctypes.c_void_p,  # return type
