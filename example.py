@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
-from PyGpPhs_py.model import *
-from PyGpPhs_py.PHSkernel_se_New import *
+from PyGpPhs.PyGpPhs_py.model import *
+from PyGpPhs.PyGpPhs_py.PHSkernel_se_New import *
 from scipy.integrate import odeint
+import numpy as np
 
 
 def u(t):

@@ -14,28 +14,47 @@ import platform
 def PHS_kernel_new(A, B, hyp_sd, hyp_l, d1, JR=None):
     # Load the shared library
     if platform.system() == 'Darwin':
-        libfile = glob.glob('../Extensions/exec/PHSkernel_build_mac/*/./Command_center.cpython-39-darwin.so')[0]
+        libfile = glob.glob('PyGpPhs/Extensions/exec/Command_center.cpython-39-darwin.so')[0]
         mylib = ctypes.CDLL(libfile)
-    else:
-        libfile = ctypes.CDLL("../Extensions/exec/PHSkernel_build_windows/PHSkernel_se_CPP.dll")
-    if not libfile:
-        print("No matching files found.")
 
-    # Define the argument types for the C function
-    mylib.Command_center.argtypes = (
-        ctypes.POINTER(ctypes.c_double),  # X
-        ctypes.POINTER(ctypes.c_double),  # Y
-        ctypes.c_double,  # sd
-        ctypes.POINTER(ctypes.c_double),  # l
-        ctypes.c_int,  # d1
-        ctypes.c_int,  # rowA
-        ctypes.c_int,  # colA
-        ctypes.c_int,  # rowB
-        ctypes.c_int,  # colB
-        ctypes.c_int,  # rowL
-        ctypes.POINTER(ctypes.c_double),  # result param
-        ctypes.POINTER(ctypes.c_double)  # JR matrix
-    )
+        # Define the argument types for the C function
+        mylib.Command_center.argtypes = (
+            ctypes.POINTER(ctypes.c_double),  # X
+            ctypes.POINTER(ctypes.c_double),  # Y
+            ctypes.c_double,  # sd
+            ctypes.POINTER(ctypes.c_double),  # l
+            ctypes.c_int,  # d1
+            ctypes.c_int,  # rowA
+            ctypes.c_int,  # colA
+            ctypes.c_int,  # rowB
+            ctypes.c_int,  # colB
+            ctypes.c_int,  # rowL
+            ctypes.POINTER(ctypes.c_double),  # result param
+            ctypes.POINTER(ctypes.c_double)  # JR matrix
+        )
+        Command_center = mylib.Command_center
+        # Define the return type
+        Command_center.restype = None
+    else:
+        libfile = ctypes.CDLL("../Extensions/exec/kernel_64bit.dll")
+        mylib = ctypes.cdll.LoadLibrary(libfile)
+        command_center_proto = ctypes.WINFUNCTYPE(
+            ctypes.c_void_p,  # this is the return type!
+            ctypes.POINTER(ctypes.c_double),  # X
+            ctypes.POINTER(ctypes.c_double),  # Y
+            ctypes.c_double,  # sd
+            ctypes.POINTER(ctypes.c_double),  # l
+            ctypes.c_int,  # d1
+            ctypes.c_int,  # rowA
+            ctypes.c_int,  # colA
+            ctypes.c_int,  # rowB
+            ctypes.c_int,  # colB
+            ctypes.c_int,  # rowL
+            ctypes.POINTER(ctypes.c_double),  # result param
+            ctypes.POINTER(ctypes.c_double)  # JR matrix
+        )
+        Command_center = command_center_proto(("Command_center", mylib), )
+
     A = A.T
     B = B.T
     rowA = A.shape[0]
@@ -44,9 +63,6 @@ def PHS_kernel_new(A, B, hyp_sd, hyp_l, d1, JR=None):
     colB = B.shape[1] if B.ndim != 1 else 1
     rowL = len(hyp_l)
 
-    Command_center = mylib.Command_center
-    # Define the return type
-    Command_center.restype = None
     # type conversion to C
     # Convert input matrices to appropriate types
     A_ptr = np.ascontiguousarray(np.array(A), dtype=np.float64).ctypes.data_as(ctypes.POINTER(ctypes.c_double))
