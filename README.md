@@ -88,6 +88,6 @@ J-R=\begin{bmatrix}
 ```
 
 ## Reference:
-[https://gpytorch.ai]gpytorch
+[gpytorch](https://gpytorch.ai)
 
-[https://scholar.google.de/citations?view_op=view_citation&hl=de&user=WBA4xBcAAAAJ&citation_for_view=WBA4xBcAAAAJ:QIV2ME_5wuYC]Paper
+[Theory and Paper](https://scholar.google.de/citations?view_op=view_citation&hl=de&user=WBA4xBcAAAAJ&citation_for_view=WBA4xBcAAAAJ:QIV2ME_5wuYC)
