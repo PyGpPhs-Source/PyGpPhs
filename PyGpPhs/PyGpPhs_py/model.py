@@ -91,9 +91,9 @@ class Model:
             dydtest_x = Tspan.grad
             dX.append(dydtest_x)
 
-        dX = np.array(dX)
+        # dX = np.array(dX)
         # ***Impoartant: if error shows up out of range at line 99, uncomment this
-        # dX = np.array([tensor.detach().numpy() for tensor in dX])
+        dX = np.array([tensor.detach().numpy() for tensor in dX])
 
         # subtract Gu
         for i in range(dX.shape[1]):
