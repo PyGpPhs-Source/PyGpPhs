@@ -220,7 +220,7 @@ def main():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    number_of_data = 5
+    number_of_data = 10
     Prep_num_data = number_of_data + 0.01
     Result_num_data = number_of_data + 0.1
     main()
