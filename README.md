@@ -32,7 +32,7 @@ model.
 
 2, Type in the following git command to clone the repository
 ```commandline
-git clong https://github.com/PyGpPhs-Source/PyGpPhs.git
+git clone https://github.com/PyGpPhs-Source/PyGpPhs.git
 ```
 
 3, The repository should be seen at your desired directory. User can refer to the "example.py" 
@@ -53,10 +53,10 @@ Important libraries from C++ is:
 - [Eigen Dense](https://eigen.tuxfamily.org/index.php?title=Main_Page) (For fast matrix computations)
 - stl vector class which should be already included.
 
-**Please note that in order to successfully use the toolbox, the user must make sure the following criteria:**
-- GCC compiler is installed
+**Please note the toolbox can be run on Mac and Windows machine**
 
-For Mac machines, everything should run. For non-Mac machines, it is sometimes necessary to recompile the .c and .cpp files used.
+For Mac machines, everything should run. For Windows machines, the .dll extension files are integrated and are tested successful.
+However, for some users, it is sometimes necessary to recompile the .c and .cpp files used.
 To do that:
 1. Navigate to the PyGpPhs folder
 2. Click, for instance, Cholesky_decomp.c file

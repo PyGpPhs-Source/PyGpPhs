@@ -13,7 +13,27 @@ import platform
 
 def PHS_kernel_new(A, B, hyp_sd, hyp_l, d1, JR=None):
     # Load the shared library
-    if platform.system() == 'Darwin':
+    if platform.system() == 'Windows':
+        libfile = "PyGpPhs/Extensions/exec/kernel_64bit.dll"
+        mylib = ctypes.cdll.LoadLibrary(libfile)
+        command_center_proto = ctypes.WINFUNCTYPE(
+            ctypes.c_void_p,  # this is the return type!
+            ctypes.POINTER(ctypes.c_double),  # X
+            ctypes.POINTER(ctypes.c_double),  # Y
+            ctypes.c_double,  # sd
+            ctypes.POINTER(ctypes.c_double),  # l
+            ctypes.c_int,  # d1
+            ctypes.c_int,  # rowA
+            ctypes.c_int,  # colA
+            ctypes.c_int,  # rowB
+            ctypes.c_int,  # colB
+            ctypes.c_int,  # rowL
+            ctypes.POINTER(ctypes.c_double),  # result param
+            ctypes.POINTER(ctypes.c_double)  # JR matrix
+        )
+        Command_center = command_center_proto(("Command_center", mylib), )
+
+    else:
         libfile = glob.glob('PyGpPhs/Extensions/exec/Command_center.cpython-39-darwin.so')[0]
         mylib = ctypes.CDLL(libfile)
 
@@ -35,25 +55,6 @@ def PHS_kernel_new(A, B, hyp_sd, hyp_l, d1, JR=None):
         Command_center = mylib.Command_center
         # Define the return type
         Command_center.restype = None
-    else:
-        libfile = "PyGpPhs/Extensions/exec/kernel_64bit.dll"
-        mylib = ctypes.cdll.LoadLibrary(libfile)
-        command_center_proto = ctypes.WINFUNCTYPE(
-            ctypes.c_void_p,  # this is the return type!
-            ctypes.POINTER(ctypes.c_double),  # X
-            ctypes.POINTER(ctypes.c_double),  # Y
-            ctypes.c_double,  # sd
-            ctypes.POINTER(ctypes.c_double),  # l
-            ctypes.c_int,  # d1
-            ctypes.c_int,  # rowA
-            ctypes.c_int,  # colA
-            ctypes.c_int,  # rowB
-            ctypes.c_int,  # colB
-            ctypes.c_int,  # rowL
-            ctypes.POINTER(ctypes.c_double),  # result param
-            ctypes.POINTER(ctypes.c_double)  # JR matrix
-        )
-        Command_center = command_center_proto(("Command_center", mylib), )
 
     A = A.T
     B = B.T
