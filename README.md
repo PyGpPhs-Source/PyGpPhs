@@ -87,16 +87,6 @@ J-R=\begin{bmatrix}
     \end{bmatrix}, \text{ where }R=0.1.
 ```
 
-
-
-
-
-
-Install latest version GPyTorch:
-```bash
-pip install https://github.com/PyGpPhs-Source/PyGpPhs.git
-```
-More information on installation can be viewed at: @paper link...
-
 ## Reference:
-Will be updated later
+[https://gpytorch.ai]gpytorch
+[https://scholar.google.de/citations?view_op=view_citation&hl=de&user=WBA4xBcAAAAJ&citation_for_view=WBA4xBcAAAAJ:QIV2ME_5wuYC]Paper
