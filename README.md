@@ -53,13 +53,21 @@ Important libraries from C++ is:
 - [Eigen Dense](https://eigen.tuxfamily.org/index.php?title=Main_Page) (For fast matrix computations)
 - stl vector class which should be already included.
 
-**Please note the toolbox can be run on most machine whose operating system uses .so or .dll files**
+**Please note that we tested the toolbox can successfully run on machine that has Apple Silicon or Windows 64-bit machines**
 
-For Mac machines, .so files are provided and python script will directly handle the internal and external interactions with .so.
+The .so and .dll files are pre-compiled for use. For Mac machines, .so files are provided and python script will directly handle the internal and external interactions with .so.
 Hence, everything should run on Mac. For Windows machines, the .dll extension files are offered and integrated. The python script will automatically handle
 internal and external interactions with .dll, leaving no user overheads. Majority of the OS can run the toolbox flawlessly.
+
 However, for some users whose computer does not read .dll or .so files, it is sometimes necessary to recompile the .c and .cpp files used.
 
+To do that:
+
+- Navigate to the PyGpPhs folder
+- Click, for instance, Cholesky_decomp.c file
+- follow the comment instruction at the top by typing into terminal
+- Select PHSkernel_se_CPP.cpp
+- follow the comment instruction by typing into terminal
 
 ## Magnet Oscillator explaination:
 **Example.py explaination:**
