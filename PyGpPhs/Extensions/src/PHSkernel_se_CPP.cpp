@@ -1,7 +1,6 @@
 //PHS_simulation
 //Author: Tommy Li
 //Date: Dec.12, 2023
-//Description: the C++ code accelerate the comp. This function is called from "PHS_Kernel_func.py"
 /*kernel
  *Kernel - Function for covariance
  To compile and use, use gcc/clang to compile this file to .o (object file), then compile the .o file to .so (shared lib)

@@ -64,10 +64,13 @@ However, for some users whose computer does not read .dll or .so files, it is so
 To do that:
 
 - Navigate to the PyGpPhs folder
-- Click, for instance, Cholesky_decomp.c file
-- follow the comment instruction at the top by typing into terminal
-- Select PHSkernel_se_CPP.cpp
-- follow the comment instruction by typing into terminal
+- Depending on the platform, the desired format should be compiled. The idea is to first compile into .o or .obj files, then
+ make them into platform specific format (.so, or .dll, and so on). Instructions for .so and .dll is listed below:
+- Select the platform oriented version (mac/windows) of Cholesky_decomp file
+- follow the comment instruction at the top by typing into terminal(.so)
+- Select platform oriented version of PHSkernel_se_CPP (whether windows or mac version)
+- follow the comment instruction by typing into terminal (for .so or .dll)
+
 
 ## Magnet Oscillator explaination:
 **Example.py explaination:**

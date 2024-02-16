@@ -1,8 +1,10 @@
 /*Open commend line, navigate to the directory that has this file
  type in:
- 1. gcc -c -fPIC Cholesky_decomp.c -o Cholesky_decomp.o
+ Important: it must be make sure that the c/c++ compiler is the same bit as your machine
+ Below is the Microsoft Visual Code tool
+ 1. cl /EHsc Cholesky_decomp.c
 
- 2. gcc -shared -o Cholesky_decomp.so Cholesky_decomp.o
+ 2. link /DLL /OUT:Cholesky_decomp_64bit.dll Cholesky_decomp_win.obj
  Then the simulation should be able to use
  */
 

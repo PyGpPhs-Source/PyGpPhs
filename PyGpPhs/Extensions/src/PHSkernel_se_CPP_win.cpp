@@ -1,15 +1,16 @@
 //PHS_simulation
 //Author: Tommy Li
 //Date: Dec.12, 2023
-//Description: the C++ code accelerate the comp. This function is called from "PHS_Kernel_func.py"
 /*kernel
  *Kernel - Function for covariance
- To compile and use, use gcc/clang to compile this file to .o (object file), then compile the .o file to .so (shared lib)
+ To compile and use, use cpp compiler to compile this file to .obj (object file),
+ then compile the .obj file to .dll (dynamically linked lib)
 
- Open commend line, navigate to the directory that has this file
- type in:
+ Important: it must be make sure that the c/c++ compiler is the same bit as your machine
+ Below is the Microsoft Visual Code tool
+ 1. cl /EHsc PHSkernel_se_CPP_win.cpp
 
- python setup.py build
+ 2. link /DLL /OUT:kernel_64bit.dll PHSkernel_se_CPP_win.obj
 
  Then the program should be ready to use
  */
