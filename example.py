@@ -200,6 +200,7 @@ def main():
     u_test = lambda t: 0 * t
 
     x_gp = model.pred_trajectory(t_span, x0, G, u_test)
+    #x_gp = Model.PyGpPhs_pred_X(np.arange(0, Result_num_data, 0.1), X, t_span, x0, G_train=G, u_train=u, G_test=G, u_test=u_test)
     x_org = odeint(ode_fun, x0, t_span, args=(JR_GT, H, G, u_test))
 
     plt.subplot(2, 1, 1)
@@ -220,7 +221,7 @@ def main():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    number_of_data = 10
+    number_of_data = 5
     Prep_num_data = number_of_data + 0.01
     Result_num_data = number_of_data + 0.1
     main()

@@ -153,6 +153,16 @@ class Model:
         return self.__ode_fun_gp(x, t_span, self.get_Hyp_JR(), self.JRX_, self.alpha_, G, u, self.hyp_, self.X_)
 
     @staticmethod
+    def PyGpPhs_pred_X(t_span, X, t_pred, x0, G_train, u_train, G_test, u_test):
+        # check validity of training data
+        if len(t_span) != X.shape[1]:
+            raise ValueError("t_span and X must be of same length")
+
+        model = Model(t_span, X=X, dX=None, G=G_train, u=u_train)
+        model.train()
+        return model.pred_trajectory(t_pred, x0, G_test, u_test)
+
+    @staticmethod
     def __ode_fun_gp(x, t, JR, JRX, alpha, G, u_tst, hyp, X):
         """
         Differential equation system function for odeint.
