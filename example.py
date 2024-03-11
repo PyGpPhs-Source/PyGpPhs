@@ -1,3 +1,5 @@
+import random
+
 import matplotlib.pyplot as plt
 from PyGpPhs.PyGpPhs_py.model import *
 from PyGpPhs.PyGpPhs_py.PHSkernel_se_New import *
@@ -221,6 +223,7 @@ def main():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    random.seed(7)
     number_of_data = 5
     Prep_num_data = number_of_data + 0.01
     Result_num_data = number_of_data + 0.1

@@ -2,8 +2,6 @@ from scipy.optimize import minimize
 from PyGpPhs.PyGpPhs_py.PHSkernel_se_New import *
 from PyGpPhs.PyGpPhs_py.hyp import Hyp
 from PyGpPhs.PyGpPhs_py.Cholesky import *
-import torch
-
 
 
 def opt_hyp(hyp, lb, ub, X, dX):
@@ -11,13 +9,10 @@ def opt_hyp(hyp, lb, ub, X, dX):
     to_opt = homogenize_arr([hyp.get_SN()[1], hyp.get_SD()[1], (hyp.get_L()[1]), (hyp.get_JRvec()[1])])
     hyp_init = [hyp_vec[i] for i in range(len(to_opt)) if to_opt[i]]
 
-
     result = minimize(wrapper, hyp_init, args=(hyp_vec, to_opt, X, dX), method='Nelder-Mead', bounds=list(zip(lb, ub)))
 
-    #print('\nThe learning of parameters is', end - start, 's')
     dim = X.shape[0]
 
-    # print('\n', result)
     hyp_vec = update_hyp_vec(hyp_vec, to_opt, result.x)
     hyp_out = Hyp()
     hyp_out.set_SN(hyp_vec[0])
@@ -46,7 +41,6 @@ def homogenize_arr(Arr):
 
 
 def wrapper(x, hyp_vec, to_opt, X, dX):
-    # start = time.time()
     dim = X.shape[0]
     JR = np.zeros((dim, dim))
     hyp = np.zeros((2 + dim))
@@ -58,26 +52,18 @@ def wrapper(x, hyp_vec, to_opt, X, dX):
     JR = JR - JR.T + np.diag(np.diag(JR))
 
     out = logmaglik(hyp, JR, X, dX)
-    # end = time.time()
-    # print('wrapper takes ', end - start, 's')
     return -out
 
 
 def logmaglik(hyp, JR, X, dX):
-    #os.environ["MKL_NUM_THREADS"] = str(8)
     n = dX.shape[0]
     n_data = X.shape[1]
-    # JRX = np.kron(np.eye(n_data), JR)
     K = PHS_kernel_new(X, X, hyp[1], hyp[2:], 2, JR)
 
-
-    # L = cholesky(K + (hyp[0] ** 2) * np.eye(n), lower=True) # TIME CONSUMING, 1/2 of logmaglik time
     L = Cholesky_decomp(K + (hyp[0] ** 2) * np.eye(n))
-    alpha = np.linalg.solve(L.T, np.linalg.solve(L, dX)) # TIME CONSUMING, 1/2 of logmaglik time
+    alpha = np.linalg.solve(L.T, np.linalg.solve(L, dX))
 
     out = -0.5 * dX.T.dot(alpha) - np.sum(np.log(np.diag(L))) - n / 2.0 * np.log(2.0 * np.pi)
-
-    # print('logmaglik takes', end - start, 's')
     return out
 
 

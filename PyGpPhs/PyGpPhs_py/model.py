@@ -1,5 +1,4 @@
 import gpytorch
-import numpy as np
 from scipy.integrate import odeint
 from PyGpPhs.PyGpPhs_py.hyp import Hyp
 from PyGpPhs.PyGpPhs_py.Cholesky import *
@@ -59,11 +58,8 @@ class Model:
             scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[0.5 * training_iter], gamma=0.1)
 
             for j in range(training_iter):
-                # Zero gradients from previous iteration
                 optimizer.zero_grad()
-                # Output from model
                 output = model(t_span_tensor)
-                # Calc loss and backprop gradients
                 loss = -mll(output, X_train_tensor)
                 losses.append(loss.item())
                 loss.backward()
@@ -91,8 +87,6 @@ class Model:
             dydtest_x = Tspan.grad
             dX.append(dydtest_x)
 
-        # dX = np.array(dX)
-        # ***Impoartant: if error shows up out of range at line 99, uncomment this
         dX = np.array([tensor.detach().numpy() for tensor in dX])
 
         # subtract Gu
@@ -138,6 +132,7 @@ class Model:
 
         JRr = np.kron(np.eye(x_test.shape[1]), self.get_Hyp_JR())
         k_matrix = PHS_kernel_new(x_test, self.X_, self.get_Hyp_sd(), self.get_Hyp_l(), 1)
+        print(k_matrix.shape)
         temp = np.reshape(JRr.dot(k_matrix).T, (x_test.shape[1], len(self.get_alpha())))
         predResult = temp.dot(self.get_alpha())
         return predResult - np.min(predResult)
