@@ -80,7 +80,7 @@ is a nonlinear magnet oscillator system shown below:
 
 The parameters to the port-Hamiltonian system is given to be:
 ```math
-H(x) = \frac{x_1^2}{2}+2\cos(x_0)+\frac{x_2^2}{2}-1
+H(x) = \frac{x_1^2}{2}+2\cos(x_1)+\frac{x_2^2}{2}-1
 ```
 
 ```math
@@ -94,9 +94,15 @@ u(t)=0.1\sin(t)
 ```math
 J-R=\begin{bmatrix}
         0&1\\\
-        -1&-R
-    \end{bmatrix}, \text{ where }R=0.1.
+        -1&-r
+    \end{bmatrix}, \text{ where }r=0.1.
 ```
+Please note that larger number of data is correlated with, in general, better and more accurate predictions.
+The example.py has set number of training data to be 101 for efficiency purposes. while more data points will benefit the 
+prediction accuracy, the time to run the program will increase accordingly.
+
+To have better results, user can set the variable "number_of_data" to be higher. In the paper, number has been set to 50:
+this means data from first 50 seconds of the magnet oscillator system were observed, translating to 501 data points.
 
 ## Reference:
 [gpytorch](https://gpytorch.ai)
