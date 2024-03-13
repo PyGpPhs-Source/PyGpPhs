@@ -2,13 +2,13 @@
 
 The PyGpPhs package is designed for utilizing Gaussian Process for port-Hamiltonian system.
 
-The PyGpPhs toolbox is developed using in Python and C++. The main
+The PyGpPhs toolbox is developed using Python and C++. The main
 structure of the toolbox is written in Python while a
-few computationally expensive functions, such as the ker-
-nel and Cholesky decomposition functions, are written
+few computationally expensive functions, such as the kernel
+and Cholesky decomposition functions, are written
 in C++ . While two languages are used to develop the
-PyGpPhs toolbox, the important notion of encapsulation
-and abstraction are largely realized. Utilizing C++ data
+PyGpPhs toolbox, the important notions of encapsulation
+and abstraction are largely employed. Utilizing C++ data
 types and function calls are handled internally by the
 model class, thus leaving no explicit overheads for the users
 to consider the C++ internal workings or invoke function
@@ -57,9 +57,10 @@ Important libraries from C++ is:
 
 The .so and .dll files are pre-compiled for use. For Mac machines, .so files are provided and python script will directly handle the internal and external interactions with .so.
 Hence, everything should run on Mac. For Windows machines, the .dll extension files are offered and integrated. The python script will automatically handle
-internal and external interactions with .dll, leaving no user overheads. Majority of the OS can run the toolbox flawlessly.
+internal and external interactions with .dll, leaving no user overheads. 
 
 However, for some users whose computer does not read .dll or .so files, it is sometimes necessary to recompile the .c and .cpp files used.
+The toolbox has not extended to Linux machines (thanks to a reviewer who report this issue), future releases will address this issue.
 
 To do that:
 
